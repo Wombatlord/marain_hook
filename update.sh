@@ -13,6 +13,8 @@ fi
     }
 
     echo "Pulling copy of latest source code."
+    rm "$(git status --porcelain | grep ?? | awk '{print $2}' | xargs echo -n)"
+    git restore .
     git pull origin main || {
         echo "Could not pull updated source code."
         exit 1

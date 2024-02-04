@@ -6,11 +6,11 @@ if [[ -z $MARAIN_SRC_FOLDER ]]; then
 fi
 
 echo "Attempting to find running Marain Service"
-pgrep 'marain' || echo 'Marain Service not running.'
+pgrep 'marain-server' || echo 'Marain Service not running.'
 
-pgrep 'marain' && {
+pgrep 'marain-server' && {
     echo 'stopping Marain Service.'
-    pgrep 'marain' | xargs kill -9 2>/dev/null
+    pgrep 'marain-server' | xargs kill -9 2>/dev/null
 }
 
 {   

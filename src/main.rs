@@ -27,8 +27,8 @@ const MARAIN_SOURCE_DIR: &str = "/var/www/marain";
 fn get_script_argv(script: Script) -> &'static [&'static str] {
     match (script, getenv("HOOK_ENV")) {
         (_, x) if x == String::from("dev") => &["echo", "foo"],
-        (Script::Update, _) =>  &["./update.sh"],
-        (Script::Relaunch, _) => &["./relaunch.sh"],
+        (Script::Update, _) =>  &["./update.sh", MARAIN_SOURCE_DIR],
+        (Script::Relaunch, _) => &["./relaunch.sh", MARAIN_SOURCE_DIR],
     }
 }
 

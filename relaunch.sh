@@ -22,6 +22,6 @@ pgrep 'marain-server' && {
 
     echo "Restarting Marain service."
     cargo build --release --locked
-    nohup ./target/release/marain-server 2>>$MARAIN_SRC_FOLDER/marain.err.log 1>>$MARAIN_SRC_FOLDER/marain.log &
+    ./target/release/marain-server 2>>$MARAIN_SRC_FOLDER/marain.err.log 1>>$MARAIN_SRC_FOLDER/marain.log
 }
 

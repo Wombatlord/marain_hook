@@ -22,6 +22,7 @@ pgrep 'marain-server' && {
 
     echo "Restarting Marain service."
     cargo build --release --locked
+    export MARAIN_HOOK="1337"
     ./target/release/marain-server 2>>$MARAIN_SRC_FOLDER/marain.err.log 1>>$MARAIN_SRC_FOLDER/marain.log
 }
 
